@@ -1,0 +1,19 @@
+{
+    "name": "binbinly/tree-view",
+    "description": "tree view",
+    "authors": [
+        {
+            "name": "bin",
+            "email": "bin@test.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.2",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TreeView\\" : "src/"
+        }
+    }
+}
