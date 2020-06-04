@@ -30,7 +30,7 @@ EOF;
              <button class="dendrogram-button" href="javascript:void(0);">
                 %s
              </button>
-         <a href="#form" class="dendrogram-grow">
+         <a class="dendrogram-tab">
             %s
          </a>
     </div>
@@ -47,7 +47,7 @@ EOF;
              <button class="dendrogram-button" href="javascript:void(0);">
                 %s
              </button>
-         <a href="#form" class="dendrogram-grow">
+         <a class="dendrogram-ban">
             %s
          </a>
     </div>
@@ -141,13 +141,18 @@ EOF;
 
     private function makeForm($struct)
     {
-        $input = '<input class="dendrogram-input" name="%s" value="%s">';
+        $title = [
+            'parent' => '上级',
+            'root' => '顶级',
+            'level' => '层级'
+        ];
+        $input = '%s<input class="dendrogram-input" name="%s" value="%s">';
         $form_content = '';
         foreach ($struct as $item) {
             if (in_array($item, $this->guarded)) {
                 continue;
             }
-            $form_content .= sprintf($input, $item, '{' . $item . '}');
+            $form_content .= sprintf($input, $title[$item], $item, '{' . $item . '}');
         }
         $this->tree_view = $this->tree_view . sprintf($this->form, $form_content);
     }

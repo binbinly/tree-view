@@ -14,13 +14,13 @@ interface Structure
      * @param array $column
      * @return mixed
      */
-    public function buildCatalog(array $column = ['name']);
+    public function buildCatalog(array $column = ['id']);
 
     /**
      * @param array $column
      * @return mixed
      */
-    public function buildRhizome(array $column = ['name']);
+    public function buildRhizome(array $column = ['id']);
 
     /**
      * @param $id
